@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image to Base64 Converter - Fast, Easy, and Free Tool</title>
+    <meta name="description" content="Convert images to Base64 format and vice versa easily with our fast and free online tool. Perfect for developers and designers. No signup required." />
+    <meta name="keywords" content="image to base64, base64 converter, convert image online, image conversion tool, base64 image generator" />
+    
+    <meta name="author" content="Muhammed Fasil K (https://github.com/fasilofficial)" />
+
+    <meta property="og:title" content="Image to Base64 Converter - Fast, Easy, and Free Tool" />
+    <meta property="og:description" content="Easily convert images to Base64 format and vice versa with our fast and user-friendly online tool. No signup needed." />
+    <meta property="og:url" content="https://image64.netlify.app/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Image to Base64 Converter - Fast, Easy, and Free Tool" />
+    <meta name="twitter:description" content="Convert images to Base64 format and vice versa easily with our fast and free online tool." />
+
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://image64.netlify.app/" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+</head>
+
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+      <h1 class="text-3xl font-bold text-center mb-6">
+        Image & Base64 Converter
+      </h1>
+
+      <!-- Toggle Button -->
+      <div class="flex justify-center mb-6">
+        <button
+          id="toggleMode"
+          class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600"
+        >
+          <span id="toggleText">Convert Image to Base64</span>
+        </button>
+      </div>
+
+      <!-- Image to Base64 Section -->
+      <div id="imageToBase64Section" class="space-y-4">
+        <div>
+          <label for="imageInput" class="block text-sm font-medium"
+            >Upload Image</label
+          >
+          <input
+            type="file"
+            id="imageInput"
+            class="mt-2 block w-full text-gray-900 bg-gray-100 rounded-md p-2"
+          />
+          <button
+            id="convertToBase64"
+            class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
+          >
+            Convert to Base64
+          </button>
+        </div>
+        <div id="base64Output" class="hidden">
+          <label class="block text-sm font-medium">Converted Base64:</label>
+          <textarea
+            id="convertedBase64"
+            rows="6"
+            class="mt-2 mb-4 block w-full text-gray-900 bg-gray-100 rounded-md p-2 focus:outline-none"
+            readonly
+          ></textarea>
+          <div class="flex justify-between gap-2">
+            <button
+              id="copyBase64"
+              class="w-full bg-yellow-500 text-white py-2 rounded-md hover:bg-yellow-600"
+            >
+              Copy Base64
+            </button>
+            <button
+              id="downloadBase64"
+              class="w-full bg-yellow-500 text-white py-2 rounded-md hover:bg-yellow-600"
+            >
+              Download Base64
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Base64 to Image Section -->
+      <div id="base64ToImageSection" class="space-y-4 hidden">
+        <div>
+          <label for="base64Input" class="block text-sm font-medium"
+            >Enter Base64 String</label
+          >
+          <textarea
+            id="base64Input"
+            rows="4"
+            class="mt-2 block w-full text-gray-900 bg-gray-100 rounded-md p-2"
+            placeholder="Paste Base64 here"
+          ></textarea>
+          <button
+            id="convertToImage"
+            class="mt-4 w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600"
+          >
+            Convert to Image
+          </button>
+        </div>
+
+        <!-- New File Upload Section -->
+        <div>
+          <label for="uploadTxtFile" class="block text-sm font-medium"
+            >Upload .txt File</label
+          >
+          <input
+            type="file"
+            id="uploadTxtFile"
+            accept=".txt"
+            class="mt-2 block w-full text-gray-900 bg-gray-100 rounded-md p-2"
+          />
+        </div>
+
+        <div id="output" class="hidden">
+          <img
+            id="convertedImage"
+            alt="Converted Image"
+            class="w-full rounded-md mt-4 mb-4"
+          />
+          <button
+            id="downloadImage"
+            class="w-full bg-yellow-500 text-white py-2 rounded-md hover:bg-yellow-600"
+          >
+            Download Image
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
